@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 20 - Matematika Kelas 7</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.2; }
+        h2, h3 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #999; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .grafik-container { width: 80%; margin: auto; }
+    </style>
+</head>
+<body>
+    <h2>📘 Pertemuan 20: Mengumpulkan Data dari Lingkungan Sekitar dan Menyajikannya dalam Tabel</h2>
+    <h3>🎯 Tujuan Pembelajaran</h3>
+    <p>Siswa dapat mengumpulkan data dari lingkungan sekitar, menyusunnya dalam bentuk tabel, dan menyajikannya dalam bentuk grafik batang sederhana.</p>
+
+    <h3>🧠 A. Pemahaman Konsep</h3>
+    <ul>
+        <li><strong>Data</strong> adalah informasi yang dikumpulkan dari pengamatan, pengukuran, atau survei.</li>
+        <li><strong>Tabel</strong>: Menyusun data secara sistematis.</li>
+        <li><strong>Grafik batang</strong>: Menampilkan data secara visual untuk memudahkan perbandingan.</li>
+    </ul>
+    <p><strong>Langkah-langkah:</strong></p>
+    <ol>
+        <li>Tentukan objek pengamatan.</li>
+        <li>Catat data dalam bentuk tabel.</li>
+        <li>Sajikan data dalam bentuk grafik batang.</li>
+    </ol>
+
+    <h3>🧩 B. Aplikasi Konsep</h3>
+    <h4>✅ Contoh Soal:</h4>
+    <p>Seorang siswa mengukur luas beberapa bangun datar yang digambar di buku. Hasilnya:</p>
+    <table>
+        <tr>
+            <th>Bangun Datar</th>
+            <th>Luas (cm²)</th>
+        </tr>
+        <tr><td>Persegi Panjang</td><td>96</td></tr>
+        <tr><td>Segitiga</td><td>30</td></tr>
+        <tr><td>Lingkaran</td><td>78.5</td></tr>
+        <tr><td>Jajar Genjang</td><td>60</td></tr>
+        <tr><td>Belah Ketupat</td><td>48</td></tr>
+    </table>
+
+    <div class="grafik-container">
+        <canvas id="grafikLuas"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('grafikLuas').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Persegi Panjang', 'Segitiga', 'Lingkaran', 'Jajar Genjang', 'Belah Ketupat'],
+                datasets: [{
+                    label: 'Luas (cm²)',
+                    data: [96, 30, 78.5, 60, 48],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+
+    <h4>📝 Latihan Soal:</h4>
+    <ol>
+        <li>Lakukan pengukuran terhadap 5 benda di rumah atau sekolah yang berbentuk bangun datar. Catat luasnya dalam tabel.</li>
+        <li>Buat grafik batang berdasarkan data yang kamu kumpulkan.</li>
+        <li>Bandingkan luas bangun datar tersebut: mana yang paling luas dan mana yang paling kecil?</li>
+        <li>Jelaskan bagaimana kamu mengukur atau memperkirakan luas masing-masing benda.</li>
+    </ol>
+
+    <h3>💬 C. Refleksi Pembelajaran</h3>
+    <blockquote>
+        <p><strong>Pertanyaan Reflektif:</strong></p>
+        <ul>
+            <li>Apa manfaat menyajikan data dalam bentuk grafik?</li>
+            <li>Bagaimana kamu menentukan cara mengukur luas dari benda nyata?</li>
+            <li>Bagian mana dari proses pengumpulan dan penyajian data yang paling kamu nikmati?</li>
+        </ul>
+        <p><strong>Catatan Refleksi Siswa:</strong><br>
+        Tuliskan satu pengalamanmu mengumpulkan dan menyajikan data hari ini, serta apa yang kamu pelajari dari grafik yang kamu buat.</p>
+    </blockquote>
+</body>
+</html>

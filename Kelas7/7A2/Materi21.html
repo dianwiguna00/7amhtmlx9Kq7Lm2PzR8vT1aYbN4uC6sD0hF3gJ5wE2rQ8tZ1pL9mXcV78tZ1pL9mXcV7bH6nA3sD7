@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 21 - Menyajikan Data dalam Diagram Batang dan Lingkaran</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.2; }
+        h2, h3 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+        th, td { border: 1px solid #999; padding: 8px; text-align: center; }
+        canvas { max-width: 600px; margin: 20px auto; display: block; }
+    </style>
+</head>
+<body>
+    <h2>📘 Pertemuan 21: Menyajikan Data dalam Bentuk Diagram Batang dan Diagram Lingkaran</h2>
+    <h3>🎯 Tujuan Pembelajaran</h3>
+    <p>Siswa dapat menyajikan data dalam bentuk diagram batang dan diagram lingkaran, serta menginterpretasikan informasi dari kedua jenis diagram tersebut.</p>
+
+    <h3>🧠 A. Pemahaman Konsep</h3>
+    <ul>
+        <li><strong>Diagram Batang</strong>: Menyajikan data dalam bentuk batang vertikal atau horizontal. Cocok untuk membandingkan jumlah atau frekuensi antar kategori.</li>
+        <li><strong>Diagram Lingkaran</strong>: Menyajikan data dalam bentuk lingkaran yang dibagi menjadi sektor-sektor. Cocok untuk menunjukkan proporsi atau persentase dari keseluruhan.</li>
+        <li><strong>Langkah Penyajian</strong>:
+            <ol>
+                <li>Tentukan total data.</li>
+                <li>Hitung persentase tiap kategori (untuk diagram lingkaran).</li>
+                <li>Buat diagram sesuai skala dan label.</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h3>🧩 B. Aplikasi Konsep</h3>
+    <h4>✅ Contoh Soal 1: Diagram Batang</h4>
+    <table>
+        <tr><th>Hobi</th><th>Jumlah</th></tr>
+        <tr><td>Membaca</td><td>12</td></tr>
+        <tr><td>Bermain Musik</td><td>8</td></tr>
+        <tr><td>Olahraga</td><td>10</td></tr>
+        <tr><td>Menggambar</td><td>6</td></tr>
+    </table>
+    <canvas id="barChart"></canvas>
+
+    <h4>✅ Contoh Soal 2: Diagram Lingkaran</h4>
+    <table>
+        <tr><th>Transportasi</th><th>Jumlah</th></tr>
+        <tr><td>Sepeda</td><td>10</td></tr>
+        <tr><td>Motor</td><td>15</td></tr>
+        <tr><td>Jalan kaki</td><td>5</td></tr>
+        <tr><td>Angkot</td><td>10</td></tr>
+    </table>
+    <canvas id="pieChart"></canvas>
+
+    <h3>📝 Latihan Soal</h3>
+    <ol>
+        <li>Buat diagram batang dari data berikut:
+            <ul>
+                <li>Fiksi: 20</li>
+                <li>Nonfiksi: 15</li>
+                <li>Komik: 25</li>
+                <li>Majalah: 10</li>
+            </ul>
+        </li>
+        <li>Buat diagram lingkaran dari data berikut:
+            <ul>
+                <li>Apel: 8</li>
+                <li>Pisang: 12</li>
+                <li>Mangga: 10</li>
+                <li>Jeruk: 10</li>
+            </ul>
+        </li>
+        <li>Interpretasikan diagram:
+            <ul>
+                <li>Dari diagram batang: buah apa yang paling disukai?</li>
+                <li>Dari diagram lingkaran: berapa persen siswa menyukai pisang?</li>
+            </ul>
+        </li>
+        <li>Buat data sendiri dari lingkungan sekitar, lalu sajikan dalam bentuk diagram batang dan lingkaran.</li>
+    </ol>
+
+    <h3>💬 Refleksi Pembelajaran</h3>
+    <blockquote>
+        <p><strong>Pertanyaan Reflektif:</strong></p>
+        <ol>
+            <li>Kapan kamu lebih memilih menggunakan diagram batang daripada diagram lingkaran?</li>
+            <li>Apa manfaat menyajikan data dalam bentuk visual?</li>
+            <li>Bagian mana dari materi hari ini yang paling kamu kuasai dan mana yang masih membingungkan?</li>
+        </ol>
+        <p><strong>Catatan Refleksi Siswa:</strong><br>
+        Tuliskan satu pengalamanmu membuat diagram hari ini dan apa yang kamu pelajari dari proses tersebut.</p>
+    </blockquote>
+
+    <script>
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Membaca', 'Bermain Musik', 'Olahraga', 'Menggambar'],
+                datasets: [{
+                    label: 'Jumlah Siswa',
+                    data: [12, 8, 10, 6],
+                    backgroundColor: ['#3498db', '#9b59b6', '#2ecc71', '#e67e22']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Diagram Batang: Hobi Siswa' }
+                }
+            }
+        });
+
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Sepeda', 'Motor', 'Jalan kaki', 'Angkot'],
+                datasets: [{
+                    data: [10, 15, 5, 10],
+                    backgroundColor: ['#1abc9c', '#f39c12', '#e74c3c', '#8e44ad']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: { display: true, text: 'Diagram Lingkaran: Transportasi Siswa' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
